@@ -1,0 +1,24 @@
+/*Load Balancing:
+For example, imagine you have a set of servers that handle requests for a web application. The key to load balancing is using the hash value of a client's IP address or a request ID to determine which server should handle the request. The hash function is typically designed so that the data is evenly distributed across the servers, ensuring that no single server is overloaded. Write a program of a load balancing system
+*/
+#include<iostream>
+#include<string>
+using namespace std;
+int main(){
+   int N,id,server;
+   char q;
+   cout<<"Enter Total Number of Servers: ";
+   cin>>N;
+   while(1){
+       cout<<"Enter ID: ";
+       cin>>id;
+       server=id%N;
+       cout<<"Server assigned is: "<<server+1<<endl;
+       cout<<"Do You Wish to continue? (Y/N)"<<endl;
+       cin>>q;
+       if(q=='N'||q=='n'){
+           break;
+       }
+   }
+   return 0;
+}
